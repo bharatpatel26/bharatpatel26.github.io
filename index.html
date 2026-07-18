@@ -48,7 +48,6 @@
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/></svg>");
   }
 
-  /* ---------- NAV ---------- */
   header{position:sticky;top:0;z-index:50;background:rgba(8,9,13,0.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
   nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1160px;margin:0 auto;}
   .brand{display:flex;align-items:center;gap:10px;}
@@ -71,7 +70,6 @@
   .btn-gold:hover{background:rgba(217,179,108,0.1);transform:translateY(-2px);}
   @media(max-width:780px){.nav-links{display:none;}}
 
-  /* ---------- HERO ---------- */
   .hero{position:relative;z-index:1;padding:100px 24px 66px;max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:44px;align-items:center;}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.14em;color:var(--gold);text-transform:uppercase;padding:6px 14px;border:1px solid rgba(217,179,108,0.35);border-radius:100px;background:rgba(217,179,108,0.08);margin-bottom:24px;}
   .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse-dot 1.8s ease-in-out infinite;}
@@ -102,7 +100,6 @@
   .float-badge.b2{bottom:44px;right:-18px;}
   @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:58px;}.phone-stage{height:360px;order:-1;margin-bottom:8px;}}
 
-  /* ---------- MARQUEE ---------- */
   .marquee-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-elev);overflow:hidden;position:relative;z-index:1;padding:17px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
   .marquee-track{display:flex;gap:56px;width:max-content;animation:scroll-left 26s linear infinite;}
   @keyframes scroll-left{from{transform:translateX(0);}to{transform:translateX(-50%);}}
@@ -136,7 +133,6 @@
   @media(max-width:900px){.why-strip{grid-template-columns:1fr 1fr;}.why-item{border-bottom:1px solid var(--line);}}
   @media(max-width:560px){.why-strip{grid-template-columns:1fr;}}
 
-  /* ---------- VISIT / LOCATION / SHARE ---------- */
   .visit-wrap{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:26px;}
   .visit-card{background:linear-gradient(160deg,var(--bg-elev-2),var(--bg-elev));border:1px solid var(--line);border-radius:24px;padding:40px;}
   .visit-card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:22px;}
@@ -159,7 +155,6 @@
   .map-card .row-actions{justify-content:center;}
   @media(max-width:860px){.visit-wrap{grid-template-columns:1fr;}.visit-card{padding:28px;}}
 
-  /* ---------- OFFERS GALLERY ---------- */
   .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1160px;margin:0 auto;}
   .g-card{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);cursor:pointer;aspect-ratio:3/4;background:var(--bg-elev);opacity:0;transform:translateY(18px);transition:transform .25s ease, box-shadow .25s ease;}
   .g-card.in{opacity:1;transform:translateY(0);}
@@ -179,7 +174,6 @@
   .lightbox-close{position:absolute;top:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--bg-elev);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--white);}
   .lightbox-close .icon{width:20px;height:20px;}
 
-  /* ---------- REVIEWS ---------- */
   .review-wrap{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:26px;}
   .review-card{background:linear-gradient(160deg,var(--bg-elev-2),var(--bg-elev));border:1px solid var(--line);border-radius:24px;padding:40px;}
   .review-card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:8px;}
@@ -241,7 +235,6 @@
 </head>
 <body>
 
-<!-- Icon sprite -->
 <svg width="0" height="0" style="position:absolute">
 <defs>
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M4 4c0-.6.4-1 1-1h2.2c.5 0 .9.3 1 .8l.7 2.7c.1.4 0 .9-.3 1.2L7 9.3c1.1 2.5 3.2 4.6 5.7 5.7l1.6-1.6c.3-.3.8-.4 1.2-.3l2.7.7c.5.1.8.5.8 1V17c0 .6-.4 1-1 1h-1C9.8 18 4 12.2 4 5V4z"/></symbol>
@@ -474,7 +467,6 @@
   }, {threshold:0.15});
   document.querySelectorAll('.s-card').forEach(el=>obs.observe(el));
 
-  // Parallax tilt on hero phone
   const stage = document.getElementById('phoneStage');
   const mock = document.getElementById('phoneMock');
   if(stage && mock && window.matchMedia('(pointer:fine)').matches){
@@ -487,7 +479,6 @@
     stage.addEventListener('mouseleave', ()=>{ mock.style.transform = 'rotateY(0) rotateX(0)'; });
   }
 
-  // Gallery lightbox
   const galleryImgs = document.querySelectorAll('.g-card img');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
@@ -507,7 +498,6 @@
   }, {threshold:0.1});
   document.querySelectorAll('.g-card').forEach(el=>galObs.observe(el));
 
-  // Star rating picker
   let currentRating = 0;
   const stars = document.querySelectorAll('#starPicker .icon');
   stars.forEach(star=>{
@@ -545,4 +535,4 @@
 </script>
 
 </body>
-</html>
+    </html>
