@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Mobile — Tharad | Premium iPhone, Samsung & Android Store</title>
+<meta name="description" content="Deep Mobile Tharad — New iPhone, Samsung & Android phones, genuine accessories, fast repair aur recharge. Call, WhatsApp ya directions — sab ek click mein.">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08090D;
+    --bg-elev:#12151C;
+    --bg-elev-2:#171B24;
+    --blue:#2F9BFF;
+    --blue-soft:#7EC8FF;
+    --blue-dim:rgba(47,155,255,0.14);
+    --gold:#D9B36C;
+    --white:#F5F7FA;
+    --muted:#96A0B0;
+    --line:#232833;
+    --whatsapp:#25D366;
+    --radius:20px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);color:var(--white);
+    font-family:'Inter',sans-serif;overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .display{font-family:'Bricolage Grotesque',sans-serif;}
+  svg{display:block;}
+  .icon{width:1em;height:1em;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(ellipse 900px 500px at 12% -10%, rgba(47,155,255,0.17), transparent 60%),
+      radial-gradient(ellipse 700px 480px at 105% 6%, rgba(217,179,108,0.06), transparent 55%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.35;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/></svg>");
+  }
+
+  /* ---------- NAV ---------- */
+  header{position:sticky;top:0;z-index:50;background:rgba(8,9,13,0.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1160px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand img{width:38px;height:38px;border-radius:9px;object-fit:cover;border:1px solid var(--line);}
+  .brand-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.08rem;letter-spacing:0.01em;}
+  .brand-name span{color:var(--blue-soft);}
+  .nav-links{display:flex;gap:30px;font-size:0.9rem;color:var(--muted);}
+  .nav-links a{display:flex;align-items:center;gap:6px;}
+  .nav-links a:hover{color:var(--white);}
+  .nav-cta{display:flex;gap:10px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:100px;font-weight:600;font-size:0.86rem;border:1px solid transparent;transition:transform .18s ease, box-shadow .18s ease, background .18s ease;white-space:nowrap;}
+  .btn .icon{font-size:1rem;}
+  .btn-call{background:var(--blue);color:#04121F;}
+  .btn-call:hover{transform:translateY(-2px);box-shadow:0 8px 24px -6px rgba(47,155,255,0.55);}
+  .btn-wa{background:var(--whatsapp);color:#052912;}
+  .btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 24px -6px rgba(37,211,102,0.5);}
+  .btn-ghost{border-color:var(--line);color:var(--white);background:transparent;}
+  .btn-ghost:hover{border-color:var(--blue-soft);}
+  .btn-gold{background:transparent;border-color:rgba(217,179,108,0.4);color:var(--gold);}
+  .btn-gold:hover{background:rgba(217,179,108,0.1);transform:translateY(-2px);}
+  @media(max-width:780px){.nav-links{display:none;}}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;z-index:1;padding:100px 24px 66px;max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:44px;align-items:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.14em;color:var(--gold);text-transform:uppercase;padding:6px 14px;border:1px solid rgba(217,179,108,0.35);border-radius:100px;background:rgba(217,179,108,0.08);margin-bottom:24px;}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse-dot 1.8s ease-in-out infinite;}
+  @keyframes pulse-dot{0%,100%{opacity:1;}50%{opacity:0.25;}}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(2.7rem,7vw,4.6rem);line-height:0.96;letter-spacing:-0.01em;margin-bottom:24px;}
+  .hero h1 .l2{background:linear-gradient(120deg,var(--blue-soft),var(--blue) 60%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero p.sub{color:var(--muted);font-size:1.08rem;line-height:1.65;max-width:480px;margin-bottom:34px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px;}
+  .hero-ctas .btn{padding:15px 24px;font-size:0.95rem;}
+  .trust-row{display:flex;gap:28px;flex-wrap:wrap;}
+  .trust-item{display:flex;flex-direction:column;gap:2px;}
+  .trust-item .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.3rem;color:var(--blue-soft);}
+  .trust-item .lbl{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;}
+
+  .phone-stage{position:relative;height:460px;display:flex;align-items:center;justify-content:center;perspective:1000px;}
+  .ring{position:absolute;border:1px solid rgba(47,155,255,0.32);border-radius:50%;animation:ring-pulse 3.2s ease-out infinite;}
+  .ring.r2{animation-delay:1.05s;}
+  .ring.r3{animation-delay:2.1s;}
+  @keyframes ring-pulse{0%{width:180px;height:180px;opacity:0.9;}100%{width:460px;height:460px;opacity:0;}}
+  .phone-mock{position:relative;z-index:2;width:190px;height:388px;border-radius:36px;background:linear-gradient(160deg,#181C26,#08090D);border:2px solid #2A3140;box-shadow:0 30px 80px -20px rgba(47,155,255,0.5), inset 0 0 0 1px rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;transition:transform .15s ease-out;transform-style:preserve-3d;}
+  .phone-mock::before{content:"";position:absolute;top:16px;width:46px;height:5px;border-radius:4px;background:#2A3140;}
+  .phone-screen{width:158px;height:346px;border-radius:24px;background:radial-gradient(circle at 50% 28%, rgba(47,155,255,0.4), rgba(8,9,13,0.92) 72%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
+  .phone-screen .icon{width:44px;height:44px;color:var(--blue-soft);}
+  .phone-screen .brandmini{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:0.8rem;color:var(--blue-soft);letter-spacing:0.05em;}
+  .float-badge{position:absolute;z-index:3;background:var(--bg-elev);border:1px solid var(--line);padding:10px 14px;border-radius:12px;font-size:0.8rem;font-weight:600;box-shadow:0 14px 30px -12px rgba(0,0,0,0.6);display:flex;align-items:center;gap:8px;}
+  .float-badge .icon{color:var(--blue-soft);font-size:1rem;}
+  .float-badge.b1{top:14px;left:-10px;}
+  .float-badge.b2{bottom:44px;right:-18px;}
+  @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:58px;}.phone-stage{height:360px;order:-1;margin-bottom:8px;}}
+
+  /* ---------- MARQUEE ---------- */
+  .marquee-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-elev);overflow:hidden;position:relative;z-index:1;padding:17px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+  .marquee-track{display:flex;gap:56px;width:max-content;animation:scroll-left 26s linear infinite;}
+  @keyframes scroll-left{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .marquee-track span{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.05rem;color:var(--muted);display:flex;align-items:center;gap:10px;white-space:nowrap;}
+  .marquee-track span::after{content:"◆";color:var(--gold);font-size:0.55rem;margin-left:46px;}
+
+  section{position:relative;z-index:1;padding:92px 24px;}
+  .sec-head{max-width:560px;margin-bottom:52px;}
+  .sec-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.14em;color:var(--blue-soft);text-transform:uppercase;margin-bottom:12px;display:block;}
+  .sec-head h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.14;}
+  .sec-head p{color:var(--muted);margin-top:14px;font-size:1rem;line-height:1.6;}
+
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1160px;margin:0 auto;}
+  .s-card{background:var(--bg-elev);border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px;transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;opacity:0;transform:translateY(18px);}
+  .s-card.in{opacity:1;transform:translateY(0);}
+  .s-card:hover{border-color:rgba(47,155,255,0.4);transform:translateY(-4px);box-shadow:0 20px 40px -16px rgba(47,155,255,0.25);}
+  .s-card .ic-wrap{width:44px;height:44px;border-radius:12px;background:var(--blue-dim);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .s-card .ic-wrap .icon{width:22px;height:22px;color:var(--blue-soft);}
+  .s-card h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1.1rem;margin-bottom:8px;}
+  .s-card p{color:var(--muted);font-size:0.88rem;line-height:1.55;}
+  .s-card .tag{display:inline-block;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--gold);letter-spacing:0.05em;}
+  @media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.services-grid{grid-template-columns:1fr;}}
+
+  .why-strip{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+  .why-item{padding:34px 26px;border-right:1px solid var(--line);}
+  .why-item:last-child{border-right:none;}
+  .why-item .icon{width:24px;height:24px;color:var(--gold);margin-bottom:14px;}
+  .why-item h4{font-family:'Bricolage Grotesque',sans-serif;font-size:1rem;font-weight:600;margin-bottom:6px;}
+  .why-item p{color:var(--muted);font-size:0.84rem;line-height:1.5;}
+  @media(max-width:900px){.why-strip{grid-template-columns:1fr 1fr;}.why-item{border-bottom:1px solid var(--line);}}
+  @media(max-width:560px){.why-strip{grid-template-columns:1fr;}}
+
+  /* ---------- VISIT / LOCATION / SHARE ---------- */
+  .visit-wrap{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  .visit-card{background:linear-gradient(160deg,var(--bg-elev-2),var(--bg-elev));border:1px solid var(--line);border-radius:24px;padding:40px;}
+  .visit-card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:22px;}
+  .info-row{display:flex;gap:16px;padding:17px 0;border-top:1px solid var(--line);align-items:flex-start;}
+  .info-row:first-of-type{border-top:none;}
+  .info-row .ic-wrap{width:36px;height:36px;border-radius:10px;background:var(--blue-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .info-row .ic-wrap .icon{width:18px;height:18px;color:var(--blue-soft);}
+  .info-row .lbl{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--blue-soft);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+  .info-row .val{font-size:0.98rem;color:var(--white);}
+  .info-row .val.muted{color:var(--muted);font-size:0.85rem;}
+  .info-row a.val:hover{color:var(--blue-soft);}
+  .row-actions{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;}
+  .row-actions .btn{padding:11px 18px;font-size:0.84rem;}
+
+  .map-card{border-radius:24px;border:1px solid var(--line);overflow:hidden;position:relative;min-height:300px;background:linear-gradient(160deg, rgba(47,155,255,0.14), transparent 60%),repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 42px),repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 42px),var(--bg-elev);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:34px;}
+  .pin{width:56px;height:56px;border-radius:50% 50% 50% 0;background:var(--blue);transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(47,155,255,0.15), 0 20px 40px -10px rgba(47,155,255,0.5);}
+  .pin .icon{transform:rotate(45deg);width:22px;height:22px;color:#04121F;stroke-width:2.2;}
+  .map-card h4{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.15rem;}
+  .map-card p{color:var(--muted);font-size:0.88rem;max-width:300px;}
+  .map-card .row-actions{justify-content:center;}
+  @media(max-width:860px){.visit-wrap{grid-template-columns:1fr;}.visit-card{padding:28px;}}
+
+  /* ---------- OFFERS GALLERY ---------- */
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1160px;margin:0 auto;}
+  .g-card{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);cursor:pointer;aspect-ratio:3/4;background:var(--bg-elev);opacity:0;transform:translateY(18px);transition:transform .25s ease, box-shadow .25s ease;}
+  .g-card.in{opacity:1;transform:translateY(0);}
+  .g-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+  .g-card:hover img{transform:scale(1.06);}
+  .g-card:hover{box-shadow:0 20px 44px -16px rgba(47,155,255,0.35);}
+  .g-card .g-tag{position:absolute;top:12px;left:12px;background:rgba(8,9,13,0.7);backdrop-filter:blur(6px);border:1px solid rgba(217,179,108,0.4);color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;padding:5px 10px;border-radius:100px;display:flex;align-items:center;gap:5px;}
+  .g-card .g-zoom{position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,9,13,0.75),transparent 45%);display:flex;align-items:flex-end;padding:14px;opacity:0;transition:opacity .25s ease;}
+  .g-card:hover .g-zoom{opacity:1;}
+  .g-card .g-zoom span{font-size:0.82rem;font-weight:600;}
+  @media(max-width:900px){.gallery-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.gallery-grid{grid-template-columns:1fr;}}
+
+  .lightbox{position:fixed;inset:0;background:rgba(4,5,8,0.92);backdrop-filter:blur(10px);z-index:100;display:none;align-items:center;justify-content:center;padding:40px 20px;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:min(600px,90vw);max-height:82vh;border-radius:16px;border:1px solid var(--line);box-shadow:0 40px 100px -20px rgba(0,0,0,0.7);}
+  .lightbox-close{position:absolute;top:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--bg-elev);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--white);}
+  .lightbox-close .icon{width:20px;height:20px;}
+
+  /* ---------- REVIEWS ---------- */
+  .review-wrap{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  .review-card{background:linear-gradient(160deg,var(--bg-elev-2),var(--bg-elev));border:1px solid var(--line);border-radius:24px;padding:40px;}
+  .review-card h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:8px;}
+  .review-card p.hint{color:var(--muted);font-size:0.88rem;margin-bottom:24px;}
+  .star-picker{display:flex;gap:8px;margin-bottom:20px;}
+  .star-picker .icon{width:32px;height:32px;color:#3A4150;cursor:pointer;transition:color .15s ease, transform .15s ease;stroke:#3A4150;fill:none;}
+  .star-picker .icon.filled{color:var(--gold);stroke:var(--gold);fill:var(--gold);}
+  .star-picker .icon:hover{transform:scale(1.12);}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--blue-soft);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;}
+  .field input, .field textarea{
+    width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;
+    padding:12px 14px;color:var(--white);font-family:'Inter',sans-serif;font-size:0.92rem;
+    outline:none;transition:border-color .15s ease;resize:vertical;
+  }
+  .field input:focus, .field textarea:focus{border-color:var(--blue-soft);}
+  .review-card .btn{margin-top:6px;width:100%;justify-content:center;padding:14px;}
+  .google-cta{
+    background:linear-gradient(150deg, rgba(217,179,108,0.14), rgba(18,21,28,0.5));
+    border:1px solid rgba(217,179,108,0.3);border-radius:24px;padding:40px;
+    display:flex;flex-direction:column;justify-content:center;gap:16px;
+  }
+  .google-cta .stars-static{display:flex;gap:4px;color:var(--gold);}
+  .google-cta .stars-static .icon{width:22px;height:22px;fill:var(--gold);stroke:var(--gold);}
+  .google-cta h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;font-weight:700;}
+  .google-cta p{color:var(--muted);font-size:0.92rem;line-height:1.6;}
+  .insta-mini{display:flex;align-items:center;gap:12px;margin-top:8px;padding-top:20px;border-top:1px solid var(--line);}
+  .insta-mini .ic-wrap{width:40px;height:40px;border-radius:10px;background:rgba(217,179,108,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .insta-mini .ic-wrap .icon{width:20px;height:20px;color:var(--gold);}
+  .insta-mini a{font-weight:600;font-size:0.92rem;}
+  .insta-mini a:hover{color:var(--gold);}
+  @media(max-width:860px){.review-wrap{grid-template-columns:1fr;}.review-card,.google-cta{padding:28px;}}
+
+  .cta-band{max-width:1160px;margin:0 auto;text-align:center;padding:72px 40px;border-radius:28px;background:linear-gradient(150deg, rgba(47,155,255,0.16), rgba(18,21,28,0.4));border:1px solid rgba(47,155,255,0.25);}
+  .cta-band h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:14px;}
+  .cta-band p{color:var(--muted);margin-bottom:30px;}
+  .cta-band .hero-ctas{justify-content:center;}
+
+  footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:40px 24px 110px;}
+  .footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .footer-meta{color:var(--muted);font-size:0.82rem;text-align:right;}
+  .footer-meta .credit{color:#E5484D;font-weight:600;}
+
+  .float-actions{position:fixed;bottom:22px;right:22px;z-index:60;display:flex;flex-direction:column;gap:12px;}
+  .fab{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -8px rgba(0,0,0,0.55);position:relative;border:none;cursor:pointer;}
+  .fab .icon{width:24px;height:24px;}
+  .fab-wa{background:var(--whatsapp);color:#052912;}
+  .fab-call{background:var(--blue);color:#04121F;}
+  .fab-loc{background:var(--bg-elev);color:var(--gold);border:1px solid rgba(217,179,108,0.4);}
+  .fab::before{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 0 currentColor;animation:fab-pulse 2.4s ease-out infinite;}
+  .fab-wa::before{color:rgba(37,211,102,0.5);}
+  .fab-call::before{color:rgba(47,155,255,0.5);}
+  .fab-loc::before{animation:none;}
+  @keyframes fab-pulse{0%{box-shadow:0 0 0 0 currentColor;opacity:0.6;}100%{box-shadow:0 0 0 16px currentColor;opacity:0;}}
+
+  @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;}}
+  ::selection{background:var(--blue);color:#04121F;}
+</style>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute">
+<defs>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M4 4c0-.6.4-1 1-1h2.2c.5 0 .9.3 1 .8l.7 2.7c.1.4 0 .9-.3 1.2L7 9.3c1.1 2.5 3.2 4.6 5.7 5.7l1.6-1.6c.3-.3.8-.4 1.2-.3l2.7.7c.5.1.8.5.8 1V17c0 .6-.4 1-1 1h-1C9.8 18 4 12.2 4 5V4z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 3.58-9 8 0 1.8.66 3.45 1.78 4.8L4 21l5.4-1.7c.83.28 1.72.44 2.6.44 4.97 0 9-3.58 9-8s-4.03-8-9-8z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-7.2-7-12a7 7 0 1 1 14 0c0 4.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.4"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="18" cy="18" r="2.2"/><path d="M8 10.8l8-4.4M8 13.2l8 4.4"/></symbol>
+  <symbol id="i-device" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><line x1="10" y1="18.3" x2="14" y2="18.3"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5l7.5 3v5.5c0 5-3.2 8.6-7.5 10.5-4.3-1.9-7.5-5.5-7.5-10.5V5.5l7.5-3z"/><path d="M8.7 12.2l2.2 2.2 4.4-4.6"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><line x1="2.5" y1="10" x2="21.5" y2="10"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 1 5.4-5.4l-3-3z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.2 5.9-.8z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.5 3.5H20a1 1 0 0 1 1 1v7.5a1 1 0 0 1-.3.7l-9 9a1 1 0 0 1-1.4 0l-7.2-7.2a1 1 0 0 1 0-1.4l9-9a1 1 0 0 1 .4-.3z"/><circle cx="16.2" cy="7.8" r="1.4"/></symbol>
+</defs>
+</svg>
+
+<header>
+  <nav>
+    <div class="brand">
+      <img src="logo.jpg" alt="Deep Mobile logo">
+      <div class="brand-name">DEEP <span>MOBILE</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#brands">Brands</a>
+      <a href="#services">Services</a>
+      <a href="#offers">Offers</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Location</a>
+      <a href="https://instagram.com/deepmobille" target="_blank" rel="noopener"><svg class="icon"><use href="#i-insta"/></svg> Instagram</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="tel:+917427879778"><svg class="icon"><use href="#i-phone"/></svg> Call</a>
+      <a class="btn btn-wa" href="https://wa.me/917427879778?text=Hi%20Deep%20Mobile%2C%20mujhe%20jaankari%20chahiye" target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg> WhatsApp</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> Premium Mobile Store · Tharad</div>
+    <h1>DEEP<br><span class="l2">MOBILE</span></h1>
+    <p class="sub">iPhone, Samsung aur har Android brand — naye phone, asli accessories, fast repair aur recharge. Powered by Bhatias.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-call" href="tel:+917427879778"><svg class="icon"><use href="#i-phone"/></svg> Call Now — 74278 79778</a>
+      <a class="btn btn-wa" href="https://wa.me/917427879778?text=Hi%20Deep%20Mobile%2C%20mujhe%20jaankari%20chahiye" target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg> WhatsApp Us</a>
+      <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Deep+Mobile+Tharad+Banaskantha+Gujarat" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg> Get Directions</a>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><span class="num">8AM–10PM</span><span class="lbl">Daily Timing</span></div>
+      <div class="trust-item"><span class="num">100%</span><span class="lbl">Genuine Products</span></div>
+      <div class="trust-item"><span class="num">All</span><span class="lbl">Android + iPhone</span></div>
+    </div>
+  </div>
+  <div class="phone-stage" id="phoneStage">
+    <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+    <div class="phone-mock" id="phoneMock">
+      <div class="phone-screen">
+        <svg class="icon"><use href="#i-device"/></svg>
+        <div class="brandmini">DEEP MOBILE</div>
+      </div>
+    </div>
+    <div class="float-badge b1"><svg class="icon"><use href="#i-check"/></svg> iPhone Available</div>
+    <div class="float-badge b2"><svg class="icon"><use href="#i-check"/></svg> Samsung Available</div>
+  </div>
+</section>
+
+<div class="marquee-strip" id="brands">
+  <div class="marquee-track">
+    <span>iPhone</span><span>Samsung</span><span>Redmi</span><span>Vivo</span><span>Oppo</span><span>Realme</span><span>OnePlus</span><span>Motorola</span>
+    <span>iPhone</span><span>Samsung</span><span>Redmi</span><span>Vivo</span><span>Oppo</span><span>Realme</span><span>OnePlus</span><span>Motorola</span>
+  </div>
+</div>
+
+<section id="offers">
+  <div class="sec-head">
+    <span class="sec-eyebrow">Latest Offers</span>
+    <h2>Chalu offers, seedhe dukaan se.</h2>
+    <p>Naye aur best-price deals — details ke liye photo par click karke bada dekhein, ya seedha call/WhatsApp karein.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-card" data-full="0"><img src="offer-iphone13-promax.jpg" alt="iPhone 13 Pro Max offer"><div class="g-tag"><svg class="icon"><use href="#i-tag"/></svg> Offer</div><div class="g-zoom"><span>iPhone 13 Pro Max</span></div></div>
+    <div class="g-card" data-full="1"><img src="offer-iphone17-promax.jpg" alt="iPhone 17 Pro Max offer"><div class="g-tag"><svg class="icon"><use href="#i-tag"/></svg> Offer</div><div class="g-zoom"><span>iPhone 17 Pro Max</span></div></div>
+    <div class="g-card" data-full="2"><img src="price-list.jpg" alt="Deep Mobile price list"><div class="g-tag"><svg class="icon"><use href="#i-tag"/></svg> Price List</div><div class="g-zoom"><span>Full Price List</span></div></div>
+    <div class="g-card" data-full="3"><img src="offer-iphone13.jpg" alt="iPhone 13 128GB offer"><div class="g-tag"><svg class="icon"><use href="#i-tag"/></svg> Offer</div><div class="g-zoom"><span>iPhone 13 128GB</span></div></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()"><svg class="icon"><use href="#i-x"/></svg></button>
+  <img id="lightboxImg" src="" alt="Offer full view">
+</div>
+
+<section id="services">
+  <div class="sec-head">
+    <span class="sec-eyebrow">What we offer</span>
+    <h2>Har mobile zaroorat, ek hi dukan.</h2>
+    <p>Naye phone se lekar repair aur recharge tak — Deep Mobile Tharad mein sab kuch genuine aur bharosemand.</p>
+  </div>
+  <div class="services-grid">
+    <div class="s-card"><div class="ic-wrap"><svg class="icon"><use href="#i-device"/></svg></div><h3>New Phones</h3><p>Latest iPhone aur Android launches, best price ke saath.</p><span class="tag">iPhone · Samsung · Android</span></div>
+    <div class="s-card"><div class="ic-wrap"><svg class="icon"><use href="#i-bolt"/></svg></div><h3>Accessories</h3><p>Covers, chargers, earphones, tempered glass — 100% original quality.</p><span class="tag">Genuine only</span></div>
+    <div class="s-card"><div class="ic-wrap"><svg class="icon"><use href="#i-tool"/></svg></div><h3>Mobile Repair</h3><p>Screen, battery, charging port — fast aur reliable service.</p><span class="tag">Quick turnaround</span></div>
+    <div class="s-card"><div class="ic-wrap"><svg class="icon"><use href="#i-card"/></svg></div><h3>Recharge & Bills</h3><p>Prepaid recharge aur bill payments on the spot.</p><span class="tag">Instant</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <span class="sec-eyebrow">Why Deep Mobile</span>
+    <h2>Tharad ka apna trusted mobile store.</h2>
+  </div>
+  <div class="why-strip">
+    <div class="why-item"><svg class="icon"><use href="#i-shield"/></svg><h4>Genuine Products</h4><p>Har phone aur accessory verified aur original.</p></div>
+    <div class="why-item"><svg class="icon"><use href="#i-bolt"/></svg><h4>Fast Service</h4><p>Repair aur recharge dono quick turnaround ke saath.</p></div>
+    <div class="why-item"><svg class="icon"><use href="#i-chat"/></svg><h4>Direct Support</h4><p>Ek click mein call ya WhatsApp par baat karein.</p></div>
+    <div class="why-item"><svg class="icon"><use href="#i-pin"/></svg><h4>Local & Trusted</h4><p>Tharad, Banaskantha mein aasani se pahuncho.</p></div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="sec-head">
+    <span class="sec-eyebrow">Customer Reviews</span>
+    <h2>Aapka anubhav, hamare liye zaroori hai.</h2>
+    <p>Star dekar apna review bhejein — seedha humein WhatsApp par milega.</p>
+  </div>
+  <div class="review-wrap">
+    <div class="review-card">
+      <h3>Apna Review Likhein</h3>
+      <p class="hint">Rating select karein aur short review type karein.</p>
+      <div class="star-picker" id="starPicker">
+        <svg class="icon" data-val="1"><use href="#i-star"/></svg>
+        <svg class="icon" data-val="2"><use href="#i-star"/></svg>
+        <svg class="icon" data-val="3"><use href="#i-star"/></svg>
+        <svg class="icon" data-val="4"><use href="#i-star"/></svg>
+        <svg class="icon" data-val="5"><use href="#i-star"/></svg>
+      </div>
+      <div class="field">
+        <label>Aapka Naam</label>
+        <input type="text" id="revName" placeholder="Naam likhein">
+      </div>
+      <div class="field">
+        <label>Review</label>
+        <textarea id="revText" rows="3" placeholder="Apna anubhav share karein..."></textarea>
+      </div>
+      <button class="btn btn-wa" onclick="submitReview()"><svg class="icon"><use href="#i-chat"/></svg> Review Bhejein via WhatsApp</button>
+    </div>
+    <div class="google-cta">
+      <div class="stars-static">
+        <svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg>
+      </div>
+      <h3>Google par bhi rate karein</h3>
+      <p>Google Maps par Deep Mobile ko dhundhein aur apna public review chhodein — isse aur customers ko bharosa milta hai.</p>
+      <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Deep+Mobile+Tharad+Banaskantha+Gujarat" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg> Find Us on Google</a>
+      <div class="insta-mini">
+        <div class="ic-wrap"><svg class="icon"><use href="#i-insta"/></svg></div>
+        <div><div class="lbl" style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:2px;">Follow Us</div><a href="https://instagram.com/deepmobille" target="_blank" rel="noopener">@deepmobille</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="sec-head">
+    <span class="sec-eyebrow">Get in touch</span>
+    <h2>Store visit karein ya seedha connect ho jayein.</h2>
+  </div>
+  <div class="visit-wrap">
+    <div class="visit-card">
+      <h3>Store Details</h3>
+      <div class="info-row"><div class="ic-wrap"><svg class="icon"><use href="#i-pin"/></svg></div><div><div class="lbl">Address</div><a class="val" href="https://www.google.com/maps/search/?api=1&query=Deep+Mobile+Tharad+Banaskantha+Gujarat" target="_blank" rel="noopener">Tharad, Banaskantha, Gujarat</a></div></div>
+      <div class="info-row"><div class="ic-wrap"><svg class="icon"><use href="#i-clock"/></svg></div><div><div class="lbl">Timing</div><div class="val">8:00 AM – 10:00 PM</div><div class="val muted">Daily (confirm weekly-off if any)</div></div></div>
+      <div class="info-row"><div class="ic-wrap"><svg class="icon"><use href="#i-phone"/></svg></div><div><div class="lbl">Call</div><a class="val" href="tel:+917427879778">+91 74278 79778</a></div></div>
+      <div class="info-row"><div class="ic-wrap"><svg class="icon"><use href="#i-chat"/></svg></div><div><div class="lbl">WhatsApp</div><a class="val" href="https://wa.me/917427879778" target="_blank" rel="noopener">+91 74278 79778</a></div></div>
+      <div class="row-actions">
+        <a class="btn btn-call" href="tel:+917427879778"><svg class="icon"><use href="#i-phone"/></svg> Call</a>
+        <a class="btn btn-wa" href="https://wa.me/917427879778" target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg> WhatsApp</a>
+        <button class="btn btn-gold" onclick="shareShop()"><svg class="icon"><use href="#i-share"/></svg> Share</button>
+      </div>
+    </div>
+    <div class="map-card">
+      <div class="pin"><svg class="icon"><use href="#i-pin"/></svg></div>
+      <h4>Deep Mobile, Tharad</h4>
+      <p>Banaskantha, Gujarat — Google Maps par directions ke liye niche click karein.</p>
+      <div class="row-actions">
+        <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Deep+Mobile+Tharad+Banaskantha+Gujarat" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg> Open in Maps</a>
+        <button class="btn btn-ghost" onclick="shareShop()"><svg class="icon"><use href="#i-share"/></svg> Share Shop</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="cta-band">
+    <h2>Naya phone lena hai ya repair karana hai?</h2>
+    <p>Ek click mein Deep Mobile se seedha connect ho jayein.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-call" href="tel:+917427879778"><svg class="icon"><use href="#i-phone"/></svg> Call Now</a>
+      <a class="btn btn-wa" href="https://wa.me/917427879778?text=Hi%20Deep%20Mobile%2C%20mujhe%20jaankari%20chahiye" target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg> WhatsApp Now</a>
+      <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Deep+Mobile+Tharad+Banaskantha+Gujarat" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg> Directions</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="brand">
+      <img src="logo.jpg" alt="Deep Mobile logo">
+      <div class="brand-name">DEEP <span>MOBILE</span></div>
+    </div>
+    <div class="footer-meta">
+      Tharad, Banaskantha, Gujarat · 8AM–10PM<br>
+      <a href="https://instagram.com/deepmobille" target="_blank" rel="noopener">@deepmobille</a> · Powered by <span class="credit">Bhatias</span>
+    </div>
+  </div>
+</footer>
+
+<div class="float-actions">
+  <button class="fab fab-loc" onclick="window.open('https://www.google.com/maps/search/?api=1&query=Deep+Mobile+Tharad+Banaskantha+Gujarat','_blank')" aria-label="Directions"><svg class="icon"><use href="#i-pin"/></svg></button>
+  <a class="fab fab-wa" href="https://wa.me/917427879778?text=Hi%20Deep%20Mobile%2C%20mujhe%20jaankari%20chahiye" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon"><use href="#i-chat"/></svg></a>
+  <a class="fab fab-call" href="tel:+917427879778" aria-label="Call"><svg class="icon"><use href="#i-phone"/></svg></a>
+</div>
+
+<script>
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:0.15});
+  document.querySelectorAll('.s-card').forEach(el=>obs.observe(el));
+
+  // Parallax tilt on hero phone
+  const stage = document.getElementById('phoneStage');
+  const mock = document.getElementById('phoneMock');
+  if(stage && mock && window.matchMedia('(pointer:fine)').matches){
+    stage.addEventListener('mousemove', (e)=>{
+      const r = stage.getBoundingClientRect();
+      const x = (e.clientX - r.left)/r.width - 0.5;
+      const y = (e.clientY - r.top)/r.height - 0.5;
+      mock.style.transform = `rotateY(${x*14}deg) rotateX(${-y*14}deg)`;
+    });
+    stage.addEventListener('mouseleave', ()=>{ mock.style.transform = 'rotateY(0) rotateX(0)'; });
+  }
+
+  // Gallery lightbox
+  const galleryImgs = document.querySelectorAll('.g-card img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.g-card').forEach(card=>{
+    card.addEventListener('click', ()=>{
+      const src = card.querySelector('img').src;
+      lightboxImg.src = src;
+      lightbox.classList.add('open');
+    });
+  });
+  function closeLightbox(){ lightbox.classList.remove('open'); lightboxImg.src=''; }
+  lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLightbox(); });
+
+  const galObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, {threshold:0.1});
+  document.querySelectorAll('.g-card').forEach(el=>galObs.observe(el));
+
+  // Star rating picker
+  let currentRating = 0;
+  const stars = document.querySelectorAll('#starPicker .icon');
+  stars.forEach(star=>{
+    star.addEventListener('click', ()=>{
+      currentRating = parseInt(star.dataset.val);
+      stars.forEach(s=>{
+        s.classList.toggle('filled', parseInt(s.dataset.val) <= currentRating);
+      });
+    });
+  });
+
+  function submitReview(){
+    const name = document.getElementById('revName').value.trim() || 'Customer';
+    const text = document.getElementById('revText').value.trim();
+    if(currentRating === 0){ alert('Pehle star rating select karein.'); return; }
+    if(!text){ alert('Thoda review likh dein.'); return; }
+    const stars = '★'.repeat(currentRating) + '☆'.repeat(5-currentRating);
+    const msg = `Review for Deep Mobile:\nName: ${name}\nRating: ${stars}\nReview: ${text}`;
+    window.open('https://wa.me/917427879778?text=' + encodeURIComponent(msg), '_blank');
+  }
+
+  function shareShop(){
+    const shareData = {
+      title: 'Deep Mobile - Tharad',
+      text: 'Deep Mobile, Tharad — iPhone, Samsung & Android phones, accessories, repair aur recharge. Call: 7427879778',
+      url: window.location.href
+    };
+    if(navigator.share){
+      navigator.share(shareData).catch(()=>{});
+    } else {
+      const text = encodeURIComponent(shareData.text + ' ' + shareData.url);
+      window.open('https://wa.me/?text=' + text, '_blank');
+    }
+  }
+</script>
+
+</body>
+</html>
